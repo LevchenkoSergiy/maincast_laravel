@@ -1,15 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\TournamentController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('tournaments/create', [TournamentController::class, 'create'])->name('tournaments.create');
+Route::post('tournaments', [TournamentController::class, 'store'])->name('tournaments.store');
 
-Route::get('/testi', [TestController::class, 'index']);
-
-Route::get('/test', function () {
-    return 'Test Route 2';
-});
 

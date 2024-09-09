@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Tournament extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'game_type',
+        'stage',
+        'prize_pool',
+        'is_live',
+        'description',
+        'start_date',
+        'end_date',
+        'url',
+    ];
 }

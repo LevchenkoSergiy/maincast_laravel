@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tournaments', function (Blueprint $table) {
+            $table->id();
             $table->string('title');
-            $table->enum('game_type', ['CS:GO', 'DOTA2', 'Valorant']);
+            $table->string('game_type');
             $table->string('stage');
-            $table->decimal('prize_pool', 8, 2);
+            $table->decimal('prize_pool', 15, 0);
             $table->boolean('is_live')->default(false);
             $table->text('description');
             $table->date('start_date');
